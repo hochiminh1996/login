@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap');
+
+
 
 *{
     padding:0;
@@ -7,6 +10,7 @@
 
 :root{
     font-size: 62.5%;
+    font-family: 'Titillium Web';
 }
 
 body{
@@ -15,6 +19,7 @@ body{
 
 a{
     text-decoration: none;
+    font-weight: 600;
 }
 
 #page{
@@ -91,6 +96,14 @@ form .input-wrapper + .input-wrapper{
     justify-content: space-between;
 }
 
+label{
+    font-weight: 600;
+}
+
+input::placeholder{
+    font-size: 1.5rem;
+}
+
 ::-ms-reveal{
     display: none;
     /* remove o olho padrão do browser */
@@ -135,4 +148,21 @@ form button:active, form button:hover, form button:focus{
 form button:hover{
     outline: none;
     cursor: pointer;
+}
+
+@media(max-width:700px){
+    #page{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    
+    #page >img{
+        display: none;
+    }
+
+    #page > div{
+        padding: 4rem;
+    }
 }
