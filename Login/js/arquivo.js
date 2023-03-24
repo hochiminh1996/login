@@ -1,11 +1,14 @@
 
+document.querySelector("#btn").addEventListener("click", main);
+
+
 // Busca todos os .eyes através de um foreach e, em seguida, adiciona um evento de click em cada um deles. Se eles forem clicados, serão direcionados ao main
 document.querySelectorAll(".eye").forEach((eye) => {
-    eye.addEventListener("click", main);
+    eye.addEventListener("click", olhos);
 })
 
 
-function main() {
+function olhos() {
     let eyes = document.querySelectorAll(".eye");
     //acessando a imagem .eye
 
@@ -33,4 +36,14 @@ function main() {
     )
 
     */
+}
+
+function main() {
+    validacao();
+
+
+}
+
+function validacao() {
+    
 }

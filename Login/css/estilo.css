@@ -114,8 +114,8 @@ input::placeholder{
     height: 2rem;
     position: absolute;
     /* absolute para poder movimentar */
-    top: 53%;
-    right: 5%;
+    top: 55%;
+    right: 2%;
 }
 
 .hide{
