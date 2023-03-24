@@ -2,84 +2,88 @@
 
 
 
-*{
-    padding:0;
+* {
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     font-size: 62.5%;
     font-family: 'Titillium Web';
 }
 
-body{
+body {
     font-size: 1.6rem;
 }
 
-a{
+a {
     text-decoration: none;
     font-weight: 600;
 }
 
-#page{
+#page {
     height: 100vh;
 }
 
-.flex{
+
+
+.flex {
     display: flex;
 }
 
-#page > *{
+#page>* {
     width: 50%;
 
     /* aplica 50% de larguara ao primeiro elemento. E, como  consequência, o 2 terá 50% tb. > olhar o #page */
 }
 
 
-img{
+img {
     width: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     /* vai se ajustar de acordo com o tamanho */
 }
 
-header img{
+header img {
     height: 5.4rem;
     width: 16rem;
 }
 
-header{
+header {
     max-width: 35rem;
 }
 
+
+
 /* primeira div de page */
-#page > div{
+#page>div {
     padding: 4rem 11.2rem;
-    
+
 }
 
-main{
+main {
     margin-top: 5rem;
     /* border:1px solid red; */
 
 }
 
 
-.headline{
+.headline {
     max-width: 35rem;
     /* border: 1px solid red; */
 }
 
-form{
+form {
     margin-top: 4rem;
 }
 
-form .input-wrapper{
+form .input-wrapper {
     position: relative;
     /* permitindo que objetos absolutos sejam relativo a esse container  */
 }
 
-form input{
+.campo {
     width: 100%;
     background-color: #fff;
     border: 1px solid #e2e8f0;
@@ -89,37 +93,43 @@ form input{
     outline: none;
 }
 
-.campo_erro{
+.campo:focus, .campo:hover{
+    border: 1px solid #7C3AED;
+    transition: all linear .5s;
+    box-shadow: 0px 0px 10px #7C3AED;
+}
+.campo_erro {
     border: 1px solid red;
 }
 
-.campo_erro:focus{
+.campo_erro:focus {
     box-shadow: 0px 0px 10px red;
+    border: 1px solid red;
     transition: all linear .5s;
 }
 
-form .input-wrapper + .input-wrapper{
+form .input-wrapper+.input-wrapper {
     margin-top: 1.6rem;
 }
 
-.label-wrapper{
+.label-wrapper {
     justify-content: space-between;
 }
 
-label{
+label {
     font-weight: 600;
 }
 
-input::placeholder{
+input::placeholder {
     font-size: 1.5rem;
 }
 
-::-ms-reveal{
+::-ms-reveal {
     display: none;
     /* remove o olho padrão do browser */
 }
 
-.eye{
+.eye {
     width: 2rem;
     height: 2rem;
     position: absolute;
@@ -128,13 +138,13 @@ input::placeholder{
     right: 2%;
 }
 
-.hide{
+.hide {
     display: none;
     /* esconde o olho no elmento que estiver aplicado */
 }
 
-form button{
-    all:unset;
+form button {
+    all: unset;
     /* tira todas as propriedades do hover, borda, paddinh, outline e etc */
     display: flex;
     justify-content: center;
@@ -150,29 +160,141 @@ form button{
     box-sizing: border-box;
 }
 
-form button:active, form button:hover, form button:focus{
+form button:active,
+form button:hover,
+form button:focus {
     /* outline: 2px solid black; */
     background-color: #9f67ff;
 }
 
-form button:hover{
+form button:hover {
     outline: none;
     cursor: pointer;
 }
 
-@media(max-width:700px){
-    #page{
+
+/* oculta a div pages que contém o formulario */
+.ocultar {
+    display: none;
+}
+
+.ocultar_msg{
+    display: none;
+}
+
+.modal {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#info{
+    border: 1px solid #e2e8f0;
+    width: 500px;
+    height: fit-content;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+
+}
+
+/* #div_logo{
+    width: 100%;
+} */
+
+#div_logo{
+    display: flex;
+    font-weight: 400;
+    width: 100%;
+    /* border: 1px solid; */
+    flex-direction: column;
+    align-items: center;
+}
+
+#div_logo > img{
+    height: 5.4rem;
+    width: 16rem;
+}
+
+.email_wrapper{
+    /* border: 1px solid red; */
+    width: 80%;
+}
+
+.email_wrapper > label{
+    display: flex;
+    padding-top: 10px;
+}
+
+
+#btn_wrapper{
+    margin-top: 1em;
+    width: 80%;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+
+}
+
+#btn_wrapper .btn{
+    padding: 15px;
+    cursor: pointer;
+    background-color: #7c3aed;
+    border: 1px solid #7c3aed;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 2px;
+    border-radius: 4px;
+    font-weight: bold;
+
+}
+
+#btn_wrapper .btn:hover{
+    background-color: #9f67ff;
+    border: 1px solid #9f67ff;
+}
+
+#resultado{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#resultado > p{
+    /* background: linear-gradient(to right, #09f, transparent); */
+    padding: 10px 0px;
+    border-radius: 4px;
+    color: black;
+    font-weight: bold;
+    color: green;
+}
+
+/* deixa o modal invisivel */
+.off {
+    display: none;
+}
+
+@media(max-width:700px) {
+    #page {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
     }
-    
-    #page >img{
+
+    #page>img {
         display: none;
     }
 
-    #page > div{
+    #page>div {
         padding: 4rem;
     }
 }

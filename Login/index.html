@@ -26,11 +26,12 @@
 
                 </div>
 
-                <form action="">
+                <form>
                     <div class="input-wrapper">
 
                         <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required placeholder="Digite seu e-mail:">
+                        <input type="email" id="email" name="email" required class="campo"
+                            placeholder="Digite seu e-mail:">
                     </div>
 
 
@@ -38,11 +39,12 @@
                         <div class="label-wrapper flex">
                             <label for="senha">Senha</label>
 
-                            <a href="#">Esqueceu a senha?</a>
+                            <a href="#" id="esqueci">Esqueceu a senha?</a>
                         </div>
-                        <input type="password" id="senha" name="senha" required placeholder="Digite sua senha:">
+                        <input type="password" id="senha" name="senha" class="campo" required
+                            placeholder="Digite sua senha:">
 
-                        <img  class="eye show-password" src="img/eye-off.svg" alt="" value="off">
+                        <img class="eye show-password" src="img/eye-off.svg" alt="" value="off">
                         <img class="eye hide-password hide" src="img/eye.svg" alt="" value="on">
 
                     </div>
@@ -58,6 +60,31 @@
         </div>
 
         <img src="img/Rectangle 1.jpg" alt="">
+    </div>
+
+    <div class="modal off">
+        <div id="info">
+            <div id="div_logo">
+                <img src="img/logo.svg" alt="" id="logo">
+
+                <h1>Esqueci minha senha</h1>
+            </div>
+
+            <div class="email_wrapper">
+                <label for="email2">E-mail:</label>
+                <input type="email"  id="email2" class="campo" placeholder="Digite o e-mail cadastrado" required>
+            
+            </div>
+
+            <div id="btn_wrapper"> 
+                <input type="button" value="Enviar" class="btn" id="send">
+                <input type="button" value="Voltar" class="btn" id="back">
+            </div>
+
+            <div id="resultado">
+
+            </div>
+        </div>
     </div>
 </body>
 

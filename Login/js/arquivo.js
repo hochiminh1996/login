@@ -1,8 +1,15 @@
 
 document.querySelector("#btn").addEventListener("click", main);
+//ativado ao clicar no botão de submeter
+
+document.querySelector("#esqueci").addEventListener("click", esqueci);
 
 
-// Busca todos os .eyes através de um foreach e, em seguida, adiciona um evento de click em cada um deles. Se eles forem clicados, serão direcionados ao main
+document.querySelector("#back").addEventListener("click", back);
+
+document.querySelector("#send").addEventListener("click", send);
+
+// Busca todos os .eyes (img) através de um foreach e, em seguida, adiciona um evento de click em cada um deles. Se eles forem clicados, serão direcionados ao olhos
 document.querySelectorAll(".eye").forEach((eye) => {
     eye.addEventListener("click", olhos);
 })
@@ -71,4 +78,100 @@ function validacao() {
 
     }
 
+}
+
+
+function esqueci() {
+    let div = document.querySelector("#page");
+    let modal = document.querySelector(".modal");
+
+    div.classList.add("ocultar");//oculta a div page
+
+    if (modal) {
+        modal.classList.remove("off");
+    } else {
+        modal.classList.add("off");
+    }
+
+
+
+    // modal.classList.toggle("off");//remove a classe off. Já que ela existe por padrão. Assim, será mostrado o modal
+
+}
+
+function back() {
+    // Nesse caso, ao clicar, já existirá uma classe ocultar. Nesse caso, ele irá desativar, fazendo retornar a tela padrão que tinha sumido com o display block
+    document.querySelector("#page").classList.toggle("ocultar");
+
+    // removendo o modal ao voltar para a página principal. Ou seja, adiciona a classe off
+    if (document.querySelector(".modal")) {
+        document.querySelector(".modal").classList.add("off");
+    }
+
+    // removendo o elemento gerado através do removeChild -> sai a mensagem que foi enviado o email
+    if (document.querySelector("#msg")) {
+        document.querySelector("#resultado").removeChild(document.querySelector("#msg"));
+    }
+
+
+    if (document.querySelector("#email2").classList.contains("campo_erro")) {
+        document.querySelector("#email2").classList.remove("campo_erro");
+    }
+
+}
+
+function send() {
+
+    // if (!document.querySelector("#email2").value.length > 5) {
+
+    //     document.querySelector("#email2").classList.add("campo_erro");
+    //     document.querySelector("#email2").focus();
+    // } else {
+    //     if (!document.querySelector("#msg")) {
+    //         
+    //         msg.setAttribute("id", "msg");
+    //         msg.innerHTML = "Enviado com sucesso";
+
+    //         document.querySelector("#resultado").appendChild(msg);
+
+    //     }
+    // }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let email2 = document.querySelector("#email2");
+
+    if (
+        !email2.value.length > 0 || !emailRegex.test(
+        email2.value    )) {
+        document.querySelector("#email2").classList.add("campo_erro");
+        document.querySelector("#email2").focus();
+
+        /*
+            O código abaixo é sobre um cenário : 
+            O usuário preenche o e-mail corretamente e, em seguida, é disparado a criação do "p" que irá dizer que foi enviado. No entanto, ele tenta enviar um novo e-mail, só que fora do padrão solicitado dentro desse if. Nesse caso, o if abaixo serve para remover o elemento que 'p' que mostra msg 'enviado com sucesso'
+        */
+        if(document.querySelector("#msg")){
+            document.querySelector("#resultado").removeChild(document.querySelector("#msg"))
+        }
+    } else {
+        removeClass();
+        if (!document.querySelector("#msg")) {
+
+            let msg = document.createElement("p");
+            msg.setAttribute("id", "msg");
+            msg.innerHTML = "Enviado com sucesso";
+
+            document.querySelector("#resultado").appendChild(msg);
+            document.querySelector("#email2").value = "";
+            email2.focus();
+
+        }
+    }
+
+}
+
+function removeClass() {
+    if (document.querySelector("#email2").classList.contains("campo_erro")) {
+        document.querySelector("#email2").classList.remove("campo_erro");
+    }
 }
