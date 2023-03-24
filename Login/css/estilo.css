@@ -305,6 +305,10 @@ form button:hover {
     .modal{
         width: 100%;
         display: flex;
-        
+
+    }
+
+    #info{
+        width: 85%;
     }
 }
