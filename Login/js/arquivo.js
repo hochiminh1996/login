@@ -45,5 +45,30 @@ function main() {
 }
 
 function validacao() {
-    
+
+    if (!document.querySelector("#email").value.length > 0) {
+        document.querySelector("#email").classList.add("campo_erro");
+
+        document.querySelector("#email").focus();
+        // se existir a classe .campo aplicado a senha, ele remove.
+        if (document.querySelector("#senha").classList.contains("campo_erro")) {
+            document.querySelector("#senha").classList.remove("campo_erro");
+        }
+
+
+    } else if (!document.querySelector("#senha").value.length > 0) {
+        document.querySelector("#senha").classList.add("campo_erro");
+        document.querySelector("#senha").focus();
+
+
+        // se existir a classe .campo aplicado a senha, ele a remove. Isso evita que você preencha o campo e-mail e ele continue vermelho da vez q você não tinha preenchido.
+
+        if (document.querySelector("#email").classList.contains("campo_erro")) {
+            document.querySelector("#email").classList.remove("campo_erro");
+        }
+    } else {
+        alert("Você passou")
+
+    }
+
 }
