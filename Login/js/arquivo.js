@@ -114,9 +114,7 @@ function back() {
     }
 
 
-    if (document.querySelector("#email2").classList.contains("campo_erro")) {
-        document.querySelector("#email2").classList.remove("campo_erro");
-    }
+    removeClass();
 
 }
 
