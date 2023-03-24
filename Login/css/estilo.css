@@ -301,4 +301,10 @@ form button:hover {
     #page>div {
         padding: 4rem;
     }
+
+    .modal{
+        width: 100%;
+        display: flex;
+        
+    }
 }
