@@ -122,21 +122,6 @@ function back() {
 
 function send() {
 
-    // if (!document.querySelector("#email2").value.length > 5) {
-
-    //     document.querySelector("#email2").classList.add("campo_erro");
-    //     document.querySelector("#email2").focus();
-    // } else {
-    //     if (!document.querySelector("#msg")) {
-    //         
-    //         msg.setAttribute("id", "msg");
-    //         msg.innerHTML = "Enviado com sucesso";
-
-    //         document.querySelector("#resultado").appendChild(msg);
-
-    //     }
-    // }
-
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let email2 = document.querySelector("#email2");
 
